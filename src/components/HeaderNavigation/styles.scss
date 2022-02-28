@@ -1,0 +1,30 @@
+@import '../../assets/sass/_global.scss';
+
+header {
+  width: 100%;
+  min-height: 4rem;;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.button__To_Back {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 16px;
+  color: $tint-grey-600;
+  border-radius: .8rem;
+  padding: .8rem;
+  font-family: $font-accent;
+  font-weight: 400;
+  background: $tint-white;
+  box-shadow: 0px 1px 4px rgba(151, 151, 151, 0.25);
+  border: none;
+  svg {
+    margin-right: 1.6rem;
+  }
+}
