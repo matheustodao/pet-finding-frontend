@@ -1,0 +1,5 @@
+@import './mixin/inputsDefaultStyle.scss';
+
+.container__input {
+  @include inputsDefaultStyle();
+}

@@ -1,0 +1,33 @@
+@mixin inputsDefaultStyle($color : $tint-grey-700) {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  color: $color;
+  max-width: 564px;
+  width: 100%;
+
+  input, select, textarea {
+    border-radius: .4rem;
+    border: .1rem solid $primary-dark;
+    padding: 1.6rem 1rem;
+    width: 100%;
+    outline: none;
+    &::placeholder {
+      color: #4E4E4E;
+    }
+
+  }
+
+  label {
+    font-family: $font-heading;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 2.1rem;
+    margin-bottom: 1.2rem;
+  }
+
+  &::placeholder {
+    color: #4E4E4E;
+  }
+}

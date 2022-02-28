@@ -1,0 +1,58 @@
+// Most need to put prefix 'react-select'
+/*
+  In component 'Select' add the attributtes:
+    className="react-select abc" classNamePrefix="react-select"
+*/
+// .abc is to give more hierarchy
+.react-select.abc {
+  max-width: 56.4rem;
+  width: 100%;
+
+  // Container of input and arrow down
+  .react-select__control {
+    border-color: $primary-dark;
+    border-radius: .4rem;
+    height: 5rem;
+
+    .react-select__value-container {
+      font-size: 14px;
+      text-transform: capitalize;
+    }
+
+    &.react-select__control--is-focused {
+      border-color: $primary-main;
+      box-shadow: none;
+    }
+  }
+
+  // Arrow down
+  .react-select__indicator {
+    color: $primary-dark;
+  }
+
+  // Container options (the grandpa)
+  .react-select__menu {
+    color: $primary-dark;
+
+    // Wrapper options (the father)
+    .react-select__menu-list .react-select__option {
+      font-size: 13px;
+      text-transform: capitalize;
+
+      // When mouse over in option that not selected change background
+      &:hover:not(.react-select__option.react-select__option--is-selected) {
+        background: $secondary-light;
+      }
+
+      // Option
+      .react-select__option {
+        &.react-select__option--is-selected {
+          background: $secondary-main;
+
+        }
+
+      }
+    }
+  }
+
+}

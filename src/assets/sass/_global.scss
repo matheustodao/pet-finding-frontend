@@ -1,0 +1,33 @@
+@import 'themes/light.theme.scss';
+@import 'themes/default.theme.scss';
+@import 'components/Button.scss';
+@import 'components/Input.scss';
+@import 'components/ReactSelect.scss';
+@import 'components/mixin/inputsDefaultStyle.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+
+  // 100% = 16px
+  //  x   = 10px
+  //62.5% <--> 10px <--> .1rem
+  font-size: 62.5%;
+}
+
+body, textarea, input, input::placeholder, textarea::placeholder {
+  font-family: $font-body;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+body {
+  font-family: $tint-grey;
+  background: $tint-white;
+}
+
+button {
+  cursor: pointer;
+}
