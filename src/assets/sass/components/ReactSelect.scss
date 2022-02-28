@@ -41,7 +41,7 @@
 
       // When mouse over in option that not selected change background
       &:hover:not(.react-select__option.react-select__option--is-selected) {
-        background: $secondary-light;
+        background: $secondary-thin;
       }
 
       // Option
