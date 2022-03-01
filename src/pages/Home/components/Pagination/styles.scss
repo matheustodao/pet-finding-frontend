@@ -1,0 +1,62 @@
+@import '.../../../../../../assets/sass/global';
+
+@mixin DisplayFlex($align-items: center, $justify-content: center) {
+  display: flex;
+  align-items: $align-items;
+  justify-content: $justify-content;
+}
+
+.container__pagination {
+  @include DisplayFlex();
+  width: 100%;
+  button {
+    border: none;
+  }
+
+  .action__button {
+    background: $secondary-light;
+    padding: .8rem .6rem;
+    border-radius: .8rem;
+    color: $tint-white;
+
+    &[disabled] {
+      background: $secondary-thin;
+      color: $tint-grey;
+      cursor: not-allowed;
+    }
+  }
+
+  .container__list--button-page {
+    @include DisplayFlex();
+    margin: 0 1.1rem;
+
+    .container__list--wrapper-button {
+      + .container__list--wrapper-button {
+        margin-left: .8rem;
+      }
+
+      .container__list--button {
+
+        @include DisplayFlex();
+        list-style: none;
+        width: 3.2rem;
+        height: 3.2rem;
+        border-radius: 50%;
+        aspect-ratio: 1;
+        font-family: $font-heading;
+        font-weight: 400;
+        font-size: 1.4rem;
+        background: none;
+
+        border: 1px solid $tint-grey-600;
+        color: $tint-grey-600;
+
+        &.container__list--button-active {
+          border: 1px solid $primary-main;
+          background: $primary-main;
+          color: $tint-white;
+        }
+      }
+    }
+  }
+}
