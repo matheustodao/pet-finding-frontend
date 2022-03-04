@@ -15,6 +15,15 @@ export default function usePagination({ total, limit, offset }: TProps) {
   const pages = Math.ceil(total / limit); // Total pages
   const [state, dispatch] = useReducer(reducer, initialState);
   const first = Math.max(state.currentPage - MAX_LEFT, 1); // It is first button list page and can't be less 1
+  let indexFirstButtonPage = first - 1;
+
+  if ((indexFirstButtonPage + MAX_ITEMS) > pages) {
+    indexFirstButtonPage = (currentPage - (MAX_ITEMS - 1));
+  }
+
+  if ((pages - currentPage) <= 2) {
+    indexFirstButtonPage = indexFirstButtonPage - 1;
+  }
 
   function reducer(state: any, action: TAction) {
     switch (action.type) {
@@ -49,10 +58,11 @@ export default function usePagination({ total, limit, offset }: TProps) {
 
   return {
     currentPage: state.currentPage,
-    maxButtons: MAX_ITEMS,
+    maxVisibleButtons: MAX_ITEMS,
     first,
     pages,
     onActionPage: dispatch,
     limit: limit,
+    indexFirstButtonPage,
   };
 }

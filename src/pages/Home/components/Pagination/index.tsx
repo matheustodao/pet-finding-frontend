@@ -10,18 +10,8 @@ type TProps = {
 }
 
 export default function Pagination({
-  maxButtons: maxVisibleButtons,
+  maxVisibleButtons, indexFirstButtonPage,
   currentPage, first, pages, onActionPage }: TProps) {
-  let lastIndex = maxVisibleButtons;
-  let firstIndex = first - 1;
-
-  if ((firstIndex + maxVisibleButtons) > pages) {
-    firstIndex = (currentPage - (maxVisibleButtons - 1));
-  }
-
-  if ((pages - currentPage) <= 2) {
-    firstIndex = firstIndex - 1;
-  }
 
   const element: number[] = [];
   for (let index = 1; index <= pages; index++) {
