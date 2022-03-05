@@ -2,16 +2,16 @@ import { CaretLeft, CaretRight } from 'phosphor-react';
 import './styles.scss';
 
 type TProps = {
-  maxButtons: number, // Max number will display in screen
+  maxVisibleButtons: number, // Max number will display in screen
+  indexFirstButtonPage: number,
   currentPage: number,
-  first: number, // It is first button list page
   pages: number, // Total pages
   onActionPage: ({ type, value }: TAction) => void,
 }
 
 export default function Pagination({
   maxVisibleButtons, indexFirstButtonPage,
-  currentPage, first, pages, onActionPage }: TProps) {
+  currentPage, pages, onActionPage }: TProps) {
 
   const element: number[] = [];
   for (let index = 1; index <= pages; index++) {
@@ -29,7 +29,7 @@ export default function Pagination({
         <CaretLeft size={20}/>
       </button>
       <ul className="container__list--button-page">
-        {element.splice(firstIndex, lastIndex).map((page, index) => (
+        {element.splice(indexFirstButtonPage, maxVisibleButtons).map((page, index) => (
           <li
             key={page + index}
             className="container__list--wrapper-button"

@@ -18,10 +18,10 @@ export default function usePagination({ total, limit, offset }: TProps) {
   let indexFirstButtonPage = first - 1;
 
   if ((indexFirstButtonPage + MAX_ITEMS) > pages) {
-    indexFirstButtonPage = (currentPage - (MAX_ITEMS - 1));
+    indexFirstButtonPage = (state.currentPage - (MAX_ITEMS - 1));
   }
 
-  if ((pages - currentPage) <= 2) {
+  if ((pages - state.currentPage) <= 2) {
     indexFirstButtonPage = indexFirstButtonPage - 1;
   }
 
@@ -59,10 +59,9 @@ export default function usePagination({ total, limit, offset }: TProps) {
   return {
     currentPage: state.currentPage,
     maxVisibleButtons: MAX_ITEMS,
-    first,
+    indexFirstButtonPage,
     pages,
     onActionPage: dispatch,
     limit: limit,
-    indexFirstButtonPage,
   };
 }
