@@ -1,4 +1,4 @@
-type TPet = {
+export interface Pet {
   Id: string,
   Date: string,
   TypeOfPet: string,

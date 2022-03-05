@@ -2,11 +2,11 @@ import Portal from "../Portal";
 
 import './styles.scss';
 
-type TProps = {
+interface Props {
   isLoading: boolean,
 }
 
-export default function Loader({ isLoading }: TProps) {
+export default function Loader({ isLoading }: Props) {
   if (!isLoading) {
     return null;
   }

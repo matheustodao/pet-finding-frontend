@@ -1,4 +1,5 @@
 import { CaretLeft, CaretRight } from 'phosphor-react';
+import { Action } from '../../interfaces/Action';
 import './styles.scss';
 
 type TProps = {
@@ -6,7 +7,7 @@ type TProps = {
   indexFirstButtonPage: number,
   currentPage: number,
   pages: number, // Total pages
-  onActionPage: ({ type, value }: TAction) => void,
+  onActionPage: ({ type, value }: Action) => void,
 }
 
 export default function Pagination({

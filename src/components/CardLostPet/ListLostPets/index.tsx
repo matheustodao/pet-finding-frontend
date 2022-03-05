@@ -1,13 +1,16 @@
 import CardLostPet from '..'
+import { Pet } from '../../../interfaces/Pet'
 
-type TProps = {
-  data: TPet[] | null,
+interface Props {
+  data: Pet[] | null,
 }
 
-export default function ListLostPets({ data }: TProps): any {
+export default function ListLostPets({ data }: Props) {
   return (
-    data?.map((pet) => (
-      <CardLostPet key={pet.Id} pet={pet} />
-    ))
+    <>
+      {data?.map((pet) => (
+        <CardLostPet key={pet.Id} pet={pet} />
+      ))}
+    </>
   )
 }

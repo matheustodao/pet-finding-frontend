@@ -1,10 +1,11 @@
+import { Pet } from '../../interfaces/Pet';
 import './styles.scss';
 
-type TProps = {
-  pet: TPet,
+interface Props {
+  pet: Pet,
 }
 
-export default function CardLostPet({ pet }: TProps) {
+export default function CardLostPet({ pet }: Props) {
   function formatDate(date: string, local: string) {
     const dateTime = new Date(date);
 

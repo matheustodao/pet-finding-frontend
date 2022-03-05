@@ -1,12 +1,13 @@
 import { useReducer } from 'react'
+import { Action } from '../interfaces/Action';
 
-type TProps = {
+interface Props {
   total: number, // Lenght of data
   limit: number, // How many items per page
   offset: number, // How many items going to skip
 }
 
-export default function usePagination({ total, limit, offset }: TProps) {
+export default function usePagination({ total, limit, offset }: Props) {
   const initialState = {
     currentPage: offset,
   };
@@ -25,7 +26,7 @@ export default function usePagination({ total, limit, offset }: TProps) {
     indexFirstButtonPage = indexFirstButtonPage - 1;
   }
 
-  function reducer(state: any, action: TAction) {
+  function reducer(state: any, action: Action) {
     switch (action.type) {
       case 'nextPage':
         if (state.currentPage === pages) {

@@ -6,11 +6,11 @@ import { ArrowLeft } from 'phosphor-react';
 
 import './styles.scss';
 
-type TProps = {
+interface Props {
   children?: ReactChildren,
 }
 
-export default function HeaderNavigation({ children }: TProps) {
+export default function HeaderNavigation({ children }: Props) {
   const navigate = useNavigate();
   return (
     <header>
