@@ -14,7 +14,7 @@
   }
 
   .action__button {
-    background: $secondary-light;
+    background: $secondary-main;
     padding: .8rem .6rem;
     border-radius: .8rem;
     color: $tint-white;
@@ -48,12 +48,11 @@
         font-size: 1.4rem;
         background: none;
 
-        border: 1px solid $tint-grey-600;
         color: $tint-grey-600;
+        background: $secondary-thin;
 
         &.container__list--button-active {
-          border: 1px solid $primary-main;
-          background: $primary-main;
+          background: $secondary-main;
           color: $tint-white;
         }
       }
